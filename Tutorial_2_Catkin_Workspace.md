@@ -27,7 +27,14 @@ Now you can initialize the catkin workspace:
 
 `$ catkin_init_workspace`
 
+The expected output:
+
+```bash
+Creating symlink "/home/alexander/catkin_ws/src/CMakeLists.txt" pointing to "/opt/ros/melodic/share/catkin/cmake/toplevel.cmake"
+
+```
+
 Let’s list the contents of the current directory to see what changed.
 
 `$ ls -l`
-Notice that a symbolic link (`CMakeLists.txt`) has been created to `/opt/ros/kinetic/share/catkin/cmake/toplevel.cmake`
+Notice that a symbolic link (`CMakeLists.txt`) has been created to `/opt/ros/kinetic/share/melodic/cmake/toplevel.cmake`
