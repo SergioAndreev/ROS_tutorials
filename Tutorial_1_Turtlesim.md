@@ -28,4 +28,4 @@ Now you can see the turtle
 
 ### Step 3
 
-Use `$ rosrun turtlesim turtle_teleop_key` to move the turtle
+Use `$ rosrun turtlesim turtle_teleop_key` to move the turtle using arrows on the keyboard
