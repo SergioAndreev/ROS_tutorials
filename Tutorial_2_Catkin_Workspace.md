@@ -43,9 +43,7 @@ Return to the top level directory,
 
 `$ cd ~/catkin_ws`
 
-### Step 5 
-
-`catkin_make` and build the workspace.
+and build the workspace.
 
 **Note**: you must issue this command from within the top level directory (i.e., within `catkin_ws` NOT `catkin_ws/src`)
 
@@ -69,7 +67,7 @@ But what else has changed? Use the ls command again to see what is new.
 
 You now have two new directories: build and devel. The aptly named build directory is the build space for C++ packages and, for the most part, you will not interact with it. The devel directory does contain something of interest, a file named setup.bash. This setup.bash script must be sourced before using the catkin workspace.
 
-### Step 6
+### Step 5
  You just created your first catkin workspace.
 
 Before you begin to work with and develop your own ROS package, you should take a moment to get acquainted with catkin workspace conventional directory structure as described in the ROS Enhancement Proposal (REP) 128:[here](http://www.ros.org/reps/rep-0128.html)
