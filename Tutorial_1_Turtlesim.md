@@ -12,7 +12,7 @@ To run the master process, you must execute the command `roscore`
 
 The output should be the following:
 
-<img src="img/1.jpg" width = "320" height = "240" align = "middle">
+<img src="img/1.jpg" width = "480" height = "320" align = "middle">
 
 ### Step 2
 
@@ -20,11 +20,11 @@ To launch Turtlesim run the command: `$ rosrun turtlesim turtlesim_node`
 
 The expected output:
 
-<img src="img/2.jpg" width = "320" height = "40" align = "middle">
+<img src="img/2.jpg" width = "480" height = "60" align = "middle">
 
 Now you can see the turtle
 
-<img src="img/3.jpg" width = "320" height = "320" align = "middle">
+<img src="img/3.jpg" width = "480" height = "480" align = "middle">
 
 ### Step 3
 
