@@ -159,3 +159,30 @@ OK, now that we have the controller-manager package let’s try building again. 
 ```$ catkin_make```
 
 Looks like the build worked. Great, that wasn't so bad. Let’s run some of this code that we just cloned!
+
+### Step 4: Roslaunch
+
+`roslaunch` allows you to do the following:
+
+* Launch ROS Master and multiple nodes with one simple command
+* Set default parameters on the parameter server
+* Automatically re-spawn processes that have died
+
+To use roslaunch, you must first make sure that your workspace has been built, and sourced:
+
+```bash
+$ cd ~/catkin_ws
+$ catkin_make
+```
+
+Once the workspace has been built, you can source it’s setup script:
+
+`$ source devel/setup.bash`
+
+With your workspace sourced you can now launch `simple_arm`:
+
+`$ roslaunch simple_arm robot_spawn.launch`
+
+And there you have it! Your very own two-degree-of-freedom arm in simulation!
+
+**Hint**: To figure out why the arm is just swinging around loosely, check out the log messages in the ROS master console.
