@@ -117,3 +117,45 @@ workspace_folder/        --WORKSPACE
 
 </p>
 </details>
+
+# Chapter 2: Add a package
+
+### Step 1: Cloning the simple_arm Package
+One of the biggest benefits of using ROS is that it has a really large community of users and developers, so there is a lot of code that you can use.
+
+Let’s clone an existing package and add it to our newly created workspace.
+
+You will start by navigating to the src directory and cloning the simple_arm package for this lesson from its github repo.
+
+```bash
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/udacity/simple_arm_01.git simple_arm
+```
+
+### Step 2: Building the simple_arm package
+After the repo has finished cloning, you can change directory to the top-level of the ros workspace and build the new package.
+
+```bash
+$ cd ~/catkin_ws
+$ catkin_make
+```
+
+I see a CMake Error. "Could not find a package configuration file provided by controller_manager"
+
+### Step 3: Installing Missing Packages Using apt-get
+I happen to know that controller_manager refers to a ROS package from ROS Control. We can fix this by installing the associated Debian package. If I didn't already know this, I would probably have to rely on a Google search to figure out the exact name of the package required.
+
+```$ sudo apt-get install ros-kinetic-controller-manager```
+
+Some students have had success using the following commands to install missing packages:
+
+```bash
+$ source devel/setup.bash 
+$ rosdep install simple_arm
+```
+
+OK, now that we have the controller-manager package let’s try building again. I'm still in the top level directory, so I can just type `catkin_make` and hit enter.
+
+```$ catkin_make```
+
+Looks like the build worked. Great, that wasn't so bad. Let’s run some of this code that we just cloned!
