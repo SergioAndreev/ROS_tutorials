@@ -66,3 +66,11 @@ We can see that a `Twist` message consists nothing more than two `Vector3` messa
 **Note:** Sometimes, the message definition won’t provide an ample amount of detail about a message type. For example, in the example above, how can we be sure that linear and angular vectors above refer to velocities, and not positions? One way to get more detail would be to look at the comments in the message’s definition file. To do so, we can issue the following command: `rosed geometry_msgs Twist.msg`.
 
 **Note 2:** More information about rosed, including how to select which editor is used by default can be found [here](http://wiki.ros.org/ROS/Tutorials/UsingRosEd).
+
+### Step 8
+
+Sometimes it may be useful to look at a topic’s published messages in real time. To do so, we can use the command `rostopic echo`. Let’s take a look at the `/turtle1/cmd_vel topic`.
+
+`$ rostopic echo /turtle1/cmd_vel`
+
+If we then command the turtle to move from the `turtle_teleop_ke`y window, we will be able to see the output message in real-time.
