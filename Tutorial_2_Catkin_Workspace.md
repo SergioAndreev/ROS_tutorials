@@ -76,6 +76,7 @@ Before you begin to work with and develop your own ROS package, you should take 
 
 <details><summary>Click to see</summary>
 <p>
+  
 ```bash
 workspace_folder/        --WORKSPACE
   src/                   --SOURCE SPACE
@@ -113,5 +114,6 @@ workspace_folder/        --WORKSPACE
     setup.sh
     ...
 ```
+
 </p>
 </details>
