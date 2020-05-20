@@ -145,7 +145,7 @@ I see a CMake Error. "Could not find a package configuration file provided by co
 ### Step 3: Installing Missing Packages Using apt-get
 I happen to know that controller_manager refers to a ROS package from ROS Control. We can fix this by installing the associated Debian package. If I didn't already know this, I would probably have to rely on a Google search to figure out the exact name of the package required.
 
-```$ sudo apt-get install ros-kinetic-controller-manager```
+```$ sudo apt-get install ros-melodic-controller-manager```
 
 Some students have had success using the following commands to install missing packages:
 
