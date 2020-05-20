@@ -73,4 +73,4 @@ Sometimes it may be useful to look at a topic’s published messages in real tim
 
 `$ rostopic echo /turtle1/cmd_vel`
 
-If we then command the turtle to move from the `turtle_teleop_ke`y window, we will be able to see the output message in real-time.
+If we then command the turtle to move from the `turtle_teleop_key` window, we will be able to see the output message in real-time.
