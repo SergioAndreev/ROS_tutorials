@@ -49,25 +49,69 @@ and build the workspace.
 
 `$ catkin_make`
 
-While it is not essential that you have a deep understanding of what the catkin build system is, particularly if you are doing most of your development work in Python, it is helpful to learn about it. The curious reader is encouraged to read the ROS wiki.
+While it is not essential that you have a deep understanding of what the catkin build system is, particularly if you are doing most of your development work in Python, it is helpful to [learn about it](http://wiki.ros.org/catkin/conceptual_overview).
 
 After the command is executed you will notice the output of the build processes being echoed to your display. When it has finished you should see the following lines at the end of the output:
 
+```bash
 -- BUILD_SHARED_LIBS is on
 -- Configuring done
 -- Generating done
 -- Build files have been written to: `/home/robo/catkin_ws/build`
-
+####
 #### Running command: "make -j2 -l2" in "/home/robo/catkin_ws/build"
-
+####
 robo@robo-virtual-machine:~/catkin_ws$
-But what else has changed? Use the ls command again to see what is new.
+```
 
+But what else has changed? Use the `ls` command again to see what is new.
 `$ ls`
 
-You now have two new directories: build and devel. The aptly named build directory is the build space for C++ packages and, for the most part, you will not interact with it. The devel directory does contain something of interest, a file named setup.bash. This setup.bash script must be sourced before using the catkin workspace.
+You now have two new directories: `build` and `devel`. The aptly named `build` directory is the build space for C++ packages and, for the most part, you will not interact with it. The `devel` directory does contain something of interest, a file named `setup.bash`. This `setup.bash` script must be sourced before using the catkin workspace.
 
 ### Step 5
- You just created your first catkin workspace.
+You just created your first catkin workspace.
 
 Before you begin to work with and develop your own ROS package, you should take a moment to get acquainted with catkin workspace conventional directory structure as described in the ROS Enhancement Proposal (REP) 128:[here](http://www.ros.org/reps/rep-0128.html)
+
+<details><summary>Click to see</summary>
+<p>
+```bash
+workspace_folder/        --WORKSPACE
+  src/                   --SOURCE SPACE
+    CMakeLists.txt       --This is symlinked to catkin/cmake/toplevel.cmake
+    package_1/
+      CMakeLists.txt
+      package.xml
+    ...
+    package_n/
+      CATKIN_IGNORE      --Optionally place this marker file to exclude package_n from being processed. Its file type (e.g. regular file, directory) and contents don't matter. It may even be a dangling symlink.
+      CMakeLists.txt
+      package.xml
+  build/                 --BUILD SPACE(this is where build system is invoked, not necessarily within workspace)
+    CATKIN_IGNORE        --Marking the folder to be ignored when crawling for packages (necessary when source space is in the root of the workspace, the file is emtpy)
+  devel/                 --DEVEL SPACE (targets go here, parameterizable, but defaults to peer of Build Space)
+    bin/
+    etc/
+    include/
+    lib/
+    share/
+    .catkin              --Marking the folder as a development space (the file contains a semicolon separated list of Source space paths)
+    env.bash
+    setup.bash
+    setup.sh
+    ...
+  install/               --INSTALL SPACE (this is where installed targets for test installations go, not necessarily within workspace)
+    bin/
+    etc/
+    include/
+    lib/
+    share/
+    .catkin              --Marking the folder as an install space (the file is empty)
+    env.bash
+    setup.bash
+    setup.sh
+    ...
+```
+</p>
+</details>
